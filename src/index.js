@@ -42,16 +42,17 @@ server.get("/customers", (req, res) => {
   res.json(response);
 });
 
-
-
 //POST:
-server.post("customers/add", (req, res)=>{
-    console.log("new customers add");
-})
+server.post("customers/add", (req, res) => {
+  console.log("new customers add");
+});
 
 //PUT:
-
-
-
+server.put("customers/update", (req, res) => {
+    console.log("customer update");
+  });
 
 //DELETE:
+server.delete("customers/delete", (req, res) => {
+  console.log("customer deleted");
+});
