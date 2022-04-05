@@ -7,13 +7,13 @@
 
 ---
 
-##Script:
+## Script:
 
 - Start the server: npm start;
 
 ---
 
-##Endpoints:
+## Endpoints:
 
 - localhost:3001/customers;
 - localhost:3001/customers/add;
