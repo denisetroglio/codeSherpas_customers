@@ -1,0 +1,23 @@
+{
+  "name": "codesherpas_customers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisetroglio/codeSherpas_customers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denisetroglio/codeSherpas_customers/issues"
+  },
+  "homepage": "https://github.com/denisetroglio/codeSherpas_customers#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  }
+}
