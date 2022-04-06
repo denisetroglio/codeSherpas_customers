@@ -21,11 +21,9 @@ server.listen(serverPort, () =>
 //PUT: actualizar informaciones (datos).
 //DELETE: eliminar datos.
 
-//API:
-//server.get("/", (req, res)=>{
-//console.log("petición a la ruta get/");
-//res.send("<html><body><h1>Hola</h1></body></html>");
-//});
+
+//archivo de la base de datos:
+const db = dataBase("./src/customers_database.db", {verbose: console.log})
 
 //GET:
 server.get("/customers", (req, res) => {
