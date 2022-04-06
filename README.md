@@ -1,8 +1,22 @@
 # codeSherpas_customers
 
+
+## Project:
+
+- Create a new customer. A customer must have the following attributes: name, surname, email and birthdate.
+- Get a single customer with all the attributes mentioned above.
+- Get all customers. For each customer, the same information must be obtained as in the previous point.
+- Update all the attributes (at once) of an existing customer mentioned above.
+- Delete an existing customer.
+
+
+
+## Tasks:
+
 - Import dependencies;
 - Create the server;
 - Configure the server;
+- Configure data base (SQLite);
 - Start the server (3000);
 
 ---
@@ -19,14 +33,3 @@
 - localhost:3001/customers/add;
 - localhost:3001/customers/update;
 - localhost:3001/customers/delete;
-
-
----
-
-## Project:
-
-- Create a new customer. A customer must have the following attributes: name, surname, email and birthdate.
-- Get a single customer with all the attributes mentioned above.
-- Get all customers. For each customer, the same information must be obtained as in the previous point.
-- Update all the attributes (at once) of an existing customer mentioned above.
-- Delete an existing customer.
