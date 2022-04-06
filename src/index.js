@@ -19,15 +19,23 @@ server.listen(serverPort, () =>
 //archivo de la base de datos:
 const db = dataBase("./src/customers_database.db", { verbose: console.log });
 
+//API Endpoints:
+
 // 1 - Create a new customer:
 
+server.post("/customers", (req, res) => {
+const query = db.prepare("INSERT INTO customers name, surname, email, birthdate) VALUES (?,?,?,?)");
+const result = query.run("Dayana", "Serrano", "dayana_s@hotmail.com", "17/04/1975");
+res.json(result);
+console.log(result);
+}); //No está añadiendo en la lista de customers!!
 
 // 2 - Get a single customer with all the attributes:
 
 server.get("/customersid", (req, res) => {
   console.log("get a single customer");
   const query = db.prepare("SELECT * FROM customers WHERE id=3");
-  const customersId = query.all();
+  const customersId = query.get();
   res.json(customersId);
 });
 
@@ -39,22 +47,18 @@ server.get("/customers", (req, res) => {
   res.json(customers);
 });
 
-//POST:
-server.post("customers/add", (req, res) => {
-  console.log("new customers add");
+// 4 - Update all the attributes (at once) of an existing customer:
+server.post("/customers", (req, res) => {
+const query = db.prepare("UPDATE customers SET name= ?, surname= ?, email= ?, birthdate= ? WHERE id= ?");
+const updateCustomer = query.run("Carla","Garcia","carla.garcia@gmail.com","23/07/1986",4);
+res.json(updateCustomer);
+console.log("updating a customer");
 });
 
-//PUT:
-server.put("customers/update", (req, res) => {
-  console.log("customer update");
-});
 
 //DELETE:
-server.delete("customers/delete", (req, res) => {
-  console.log("customer deleted");
-});
+//server.delete("customers/delete", (req, res) => {
+ // console.log("customer deleted");
+//});
 
-//GET: obtener/devolver datos de la aplicación.
-//POST: enviar datos (insertar nuevo usuário / o petición de pedidos de un usuário).
-//PUT: actualizar informaciones (datos).
-//DELETE: eliminar datos.
+
