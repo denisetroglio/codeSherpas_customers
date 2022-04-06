@@ -24,7 +24,7 @@ const db = dataBase("./src/customers_database.db", { verbose: console.log });
 // 1 - Create a new customer:
 
 server.post("/customers", (req, res) => {
-const query = db.prepare("INSERT INTO customers name, surname, email, birthdate) VALUES (?,?,?,?)");
+const query = db.prepare("INSERT INTO customers (name, surname, email, birthdate) VALUES (?,?,?,?)");
 const result = query.run("Dayana", "Serrano", "dayana_s@hotmail.com", "17/04/1975");
 res.json(result);
 console.log(result);
