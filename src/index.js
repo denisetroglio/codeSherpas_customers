@@ -67,8 +67,8 @@ server.post("/customer/customer.id", (req, res) => {
     4
   );
   res.json(updateCustomer);
- console.log("updating a customer");
-}); //Se cambia Carlos por Carla.
+  console.log("updating a customer");
+}); //Se cambia todos los datos de Carlos por un nuevo usuário con el nombre Carla.
 
 // 5 - Delete an existing customer:
 

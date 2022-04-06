@@ -31,5 +31,5 @@
 
 ##  📫Endpoints:
 
-- localhost:3001/customers;
-- localhost:3001/customersid;
+- localhost:3001/customer;
+- localhost:3001/customer/customer.id;  
