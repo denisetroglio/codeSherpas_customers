@@ -24,10 +24,11 @@ const db = dataBase("./src/customers_database.db", { verbose: console.log });
 // 1 - Create a new customer:
 
 server.post("/customers", (req, res) => {
-const query = db.prepare("INSERT INTO customers (name, surname, email, birthdate) VALUES (?,?,?,?)");
-const result = query.run("Dayana", "Serrano", "dayana_s@hotmail.com", "17/04/1975");
-res.json(result);
-console.log(result);
+  const query = db.prepare(
+    "INSERT INTO customers (name, surname, email, birthdate) VALUES (?,?,?,?)");
+  const result = query.run("Dayana","Serrano","dayana_s@hotmail.com","17/04/1975");
+  res.json(result);
+  console.log(result);
 }); //No está añadiendo en la lista de customers!!
 
 // 2 - Get a single customer with all the attributes:
@@ -49,16 +50,21 @@ server.get("/customers", (req, res) => {
 
 // 4 - Update all the attributes (at once) of an existing customer:
 server.post("/customers", (req, res) => {
-const query = db.prepare("UPDATE customers SET name= ?, surname= ?, email= ?, birthdate= ? WHERE id= ?");
-const updateCustomer = query.run("Carla","Garcia","carla.garcia@gmail.com","23/07/1986",4);
-res.json(updateCustomer);
-console.log("updating a customer");
+  const query = db.prepare(
+    "UPDATE customers SET name= ?, surname= ?, email= ?, birthdate= ? WHERE id= ?"
+  );
+  const updateCustomer = query.run(
+    "Carla",
+    "Garcia",
+    "carla.garcia@gmail.com",
+    "23/07/1986",
+    4
+  );
+  res.json(updateCustomer);
+  console.log("updating a customer");
 });
-
 
 //DELETE:
 //server.delete("customers/delete", (req, res) => {
- // console.log("customer deleted");
+// console.log("customer deleted");
 //});
-
-
