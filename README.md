@@ -1,6 +1,6 @@
 # codeSherpas_customers
 
-## Project:
+## The project:
 
 - Create a new customer. A customer must have the following attributes: name, surname, email and birthdate.
 - Get a single customer with all the attributes mentioned above.
@@ -10,7 +10,7 @@
 
 ### Obs.: All data in this project is false to simulate an online store.
 
-## Tasks:
+## Main tasks before start:
 
 - Import dependencies;
 - Create the server;
@@ -23,7 +23,7 @@
 
 ## Script:
 
-- Start the server: npm start;
+- Start the server with: npm start;
 
 ---
 
