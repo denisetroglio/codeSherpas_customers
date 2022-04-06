@@ -35,7 +35,7 @@ server.post("/customers", (req, res) => {
   );
   res.json(result);
   console.log(result);
-});
+}); //Se ha añadido el usuário con id= 7.
 
 // 2 - Get a single customer with all the attributes:
 
@@ -44,7 +44,7 @@ server.get("/customersid", (req, res) => {
   const query = db.prepare("SELECT * FROM customers WHERE id=3");
   const customersId = query.get();
   res.json(customersId);
-});
+}); //Se pinta el usuário con id=3.
 
 // 3 - Get all customers:
 server.get("/customers", (req, res) => {
@@ -52,7 +52,7 @@ server.get("/customers", (req, res) => {
   const query = db.prepare("SELECT * FROM customers");
   const customers = query.all();
   res.json(customers);
-});
+}); //Se pintan todos los usuários de la tienda.
 
 // 4 - Update all the attributes (at once) of an existing customer:
 server.post("/customers", (req, res) => {
@@ -68,9 +68,13 @@ server.post("/customers", (req, res) => {
   );
   res.json(updateCustomer);
   console.log("updating a customer");
-});
+}); //Se cambia Carlos por Carla.
 
-//DELETE:
-//server.delete("customers/delete", (req, res) => {
-// console.log("customer deleted");
-//});
+// 5 - Delete an existing customer:
+
+server.delete("/customers", (req, res) => {
+  console.log("customer deleted");
+  const query = db.prepare("DELETE FROM customers WHERE id=5");
+  const customerDeleted = query.all();
+  res.json(customerDeleted);
+}); //El usuário con id=5 es borrado de la lista de clientes.
