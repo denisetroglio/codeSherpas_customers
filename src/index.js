@@ -16,29 +16,27 @@ server.listen(serverPort, () =>
   console.log(`Server listening at http://localhost:${serverPort}`)
 );
 
-//GET: obtener/devolver datos de la aplicación.
-//POST: enviar datos (insertar nuevo usuário / o petición de pedidos de un usuário).
-//PUT: actualizar informaciones (datos).
-//DELETE: eliminar datos.
-
-
 //archivo de la base de datos:
-const db = dataBase("./src/customers_database.db", {verbose: console.log})
+const db = dataBase("./src/customers_database.db", { verbose: console.log });
 
-//GET:
+// 1 - Create a new customer:
+
+
+// 2 - Get a single customer with all the attributes:
+
+server.get("/customersid", (req, res) => {
+  console.log("get a single customer");
+  const query = db.prepare("SELECT * FROM customers WHERE id=3");
+  const customersId = query.all();
+  res.json(customersId);
+});
+
+// 3 - Get all customers:
 server.get("/customers", (req, res) => {
-  console.log("petición GET a customers");
-  const response = {
-    customers: [
-      {
-        name: "Jorge",
-        surname: "Perez",
-        email: "jorge_perez@gmail.com",
-        birthdate: "10/07/0970",
-      },
-    ],
-  };
-  res.json(response);
+  console.log("get all customers");
+  const query = db.prepare("SELECT * FROM customers");
+  const customers = query.all();
+  res.json(customers);
 });
 
 //POST:
@@ -55,3 +53,8 @@ server.put("customers/update", (req, res) => {
 server.delete("customers/delete", (req, res) => {
   console.log("customer deleted");
 });
+
+//GET: obtener/devolver datos de la aplicación.
+//POST: enviar datos (insertar nuevo usuário / o petición de pedidos de un usuário).
+//PUT: actualizar informaciones (datos).
+//DELETE: eliminar datos.

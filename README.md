@@ -16,9 +16,9 @@
 - Import dependencies;
 - Create the server;
 - Configure the server;
+- Start the server (3001);
 - Configure data base (SQLite);
-- Start the server (3000);
-
+- Data base path;
 ---
 
 ## Script:
