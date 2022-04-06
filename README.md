@@ -1,4 +1,5 @@
 # codeSherpas_customers 
+### 🛒 Customers data for a small shop
 
 
 ## 👨‍💻The project:
