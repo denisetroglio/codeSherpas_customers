@@ -25,11 +25,17 @@ const db = dataBase("./src/customers_database.db", { verbose: console.log });
 
 server.post("/customers", (req, res) => {
   const query = db.prepare(
-    "INSERT INTO customers (name, surname, email, birthdate) VALUES (?,?,?,?)");
-  const result = query.run("Dayana","Serrano","dayana_s@hotmail.com","17/04/1975");
+    "INSERT INTO customers (name, surname, email, birthdate) VALUES (?,?,?,?)"
+  );
+  const result = query.run(
+    "Dayana",
+    "Serrano",
+    "dayana_s@hotmail.com",
+    "17/04/1975"
+  );
   res.json(result);
   console.log(result);
-}); 
+});
 
 // 2 - Get a single customer with all the attributes:
 
