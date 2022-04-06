@@ -1,6 +1,7 @@
 //importar dependencias
 const express = require("express");
 const cors = require("cors");
+const dataBase = require("better-sqlite3");
 
 //crear el servidor
 const server = express();
@@ -49,8 +50,8 @@ server.post("customers/add", (req, res) => {
 
 //PUT:
 server.put("customers/update", (req, res) => {
-    console.log("customer update");
-  });
+  console.log("customer update");
+});
 
 //DELETE:
 server.delete("customers/delete", (req, res) => {
