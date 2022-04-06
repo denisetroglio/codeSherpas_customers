@@ -30,6 +30,3 @@
 ## Endpoints:
 
 - localhost:3001/customers;
-- localhost:3001/customers/add;
-- localhost:3001/customers/update;
-- localhost:3001/customers/delete;
