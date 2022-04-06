@@ -23,7 +23,7 @@ const db = dataBase("./src/customers_database.db", { verbose: console.log });
 
 // 1 - Create a new customer:
 
-server.post("/customers", (req, res) => {
+server.post("/customer", (req, res) => {
   const query = db.prepare(
     "INSERT INTO customers (name, surname, email, birthdate) VALUES (?,?,?,?)"
   );
@@ -39,7 +39,7 @@ server.post("/customers", (req, res) => {
 
 // 2 - Get a single customer with all the attributes:
 
-server.get("/customersid", (req, res) => {
+server.get("/customer/customer.id", (req, res) => {
   console.log("get a single customer");
   const query = db.prepare("SELECT * FROM customers WHERE id=3");
   const customersId = query.get();
@@ -47,7 +47,7 @@ server.get("/customersid", (req, res) => {
 }); //Se pinta el usuário con id=3.
 
 // 3 - Get all customers:
-server.get("/customers", (req, res) => {
+server.get("/customer", (req, res) => {
   console.log("get all customers");
   const query = db.prepare("SELECT * FROM customers");
   const customers = query.all();
@@ -55,7 +55,7 @@ server.get("/customers", (req, res) => {
 }); //Se pintan todos los usuários de la tienda.
 
 // 4 - Update all the attributes (at once) of an existing customer:
-server.post("/customers", (req, res) => {
+server.post("/customer/customer.id", (req, res) => {
   const query = db.prepare(
     "UPDATE customers SET name= ?, surname= ?, email= ?, birthdate= ? WHERE id= ?"
   );
@@ -72,7 +72,7 @@ server.post("/customers", (req, res) => {
 
 // 5 - Delete an existing customer:
 
-server.delete("/delete-with-body-params", (req, res) => {
+server.delete("/customer/customer.id", (req, res) => {
   const query = db.prepare("DELETE FROM customers WHERE id =?");
   const result = query.run(req.body.id);
   console.log(result);
