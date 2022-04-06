@@ -1,6 +1,7 @@
-# codeSherpas_customers
+# codeSherpas_customers 
 
-## The project:
+
+## 👨‍💻The project:
 
 - Create a new customer. A customer must have the following attributes: name, surname, email and birthdate.
 - Get a single customer with all the attributes mentioned above.
@@ -8,9 +9,9 @@
 - Update all the attributes (at once) of an existing customer mentioned above.
 - Delete an existing customer.
 
-### Obs.: All data in this project is false to simulate an online store.
+### ⚠️ Obs.: All data in this project is false to simulate an online store.
 
-## Main tasks before start:
+## 👨‍💻Main tasks before start:
 
 - Import dependencies;
 - Create the server;
@@ -21,13 +22,13 @@
 
 ---
 
-## Script:
+## 🚀Script:
 
 - Start the server with: npm start;
 
 ---
 
-## Endpoints:
+##  📫Endpoints:
 
 - localhost:3001/customers;
 - localhost:3001/customersid;
