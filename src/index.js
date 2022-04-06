@@ -29,7 +29,7 @@ server.post("/customers", (req, res) => {
   const result = query.run("Dayana","Serrano","dayana_s@hotmail.com","17/04/1975");
   res.json(result);
   console.log(result);
-}); //No está añadiendo en la lista de customers!!
+}); 
 
 // 2 - Get a single customer with all the attributes:
 
