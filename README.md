@@ -23,7 +23,7 @@
 
 ---
 
-## 🚀Script:
+## 🚀How to run the application:
 
 - Start the server with: npm start;
 
