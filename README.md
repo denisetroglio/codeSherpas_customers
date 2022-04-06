@@ -8,7 +8,7 @@
 - Update all the attributes (at once) of an existing customer mentioned above.
 - Delete an existing customer.
 
-- Obs.: All data in this project is false to simulate an online store.
+### Obs.: All data in this project is false to simulate an online store.
 
 ## Tasks:
 
