@@ -74,5 +74,5 @@ server.delete("/customer/customer.id", (req, res) => {
   }
 });
 
-
+//Exportar index.js para hacer los testes en JEST:
 module.exports = server 
