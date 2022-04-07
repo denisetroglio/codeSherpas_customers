@@ -13,7 +13,7 @@ server.use(express.json());
 //iniciar el servidor
 const serverPort = 3001;
 server.listen(serverPort, () =>
-  console.log(`Server listening at http://localhost:${serverPort}`)
+console.log(`Server listening at http://localhost:${serverPort}`)
 );
 
 //archivo de la base de datos:
@@ -25,17 +25,10 @@ const db = dataBase("./src/customers_database.db", { verbose: console.log });
 
 server.post("/customer", (req, res) => {
   const query = db.prepare(
-    "INSERT INTO customers (name, surname, email, birthdate) VALUES (?,?,?,?)"
-  );
-  const result = query.run(
-    "Dayana",
-    "Serrano",
-    "dayana_s@hotmail.com",
-    "17/04/1975"
-  );
+    "INSERT INTO customers (name, surname, email, birthdate) VALUES (?,?,?,?)");
+  const result = query.run(req.body.name, req.body.surname, req.body.email, req.body.birthdate);
   res.json(result);
-  console.log(result);
-}); //Se ha añadido el usuário con id= 7.
+});
 
 // 2 - Get a single customer with all the attributes:
 
@@ -54,21 +47,15 @@ server.get("/customer", (req, res) => {
   res.json(customers);
 }); //Se pintan todos los usuários de la tienda.
 
+
 // 4 - Update all the attributes (at once) of an existing customer:
 server.post("/customer/customer.id", (req, res) => {
   const query = db.prepare(
-    "UPDATE customers SET name= ?, surname= ?, email= ?, birthdate= ? WHERE id= ?"
-  );
-  const updateCustomer = query.run(
-    "Carla",
-    "Garcia",
-    "carla.garcia@gmail.com",
-    "23/07/1986",
-    4
-  );
+    "UPDATE customers SET name= ?, surname= ?, email= ?, birthdate= ? WHERE id= ?");
+  const updateCustomer = query.run(req.body.name, req.body.surname, req.body.email, req.body.birthdate, req.body.id);
   res.json(updateCustomer);
   console.log("updating a customer");
-}); //Se cambia todos los datos de Carlos por un nuevo usuário con el nombre Carla.
+});
 
 // 5 - Delete an existing customer:
 
@@ -86,3 +73,6 @@ server.delete("/customer/customer.id", (req, res) => {
     });
   }
 });
+
+
+module.exports = server 
