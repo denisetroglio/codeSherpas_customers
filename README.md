@@ -1,6 +1,6 @@
-# codeSherpas_customers 
-### 🛒 Customers data for a small shop
+# codeSherpas_customers
 
+### 🛒 Customers data for a small shop
 
 ## 👩‍💻The project:
 
@@ -36,10 +36,10 @@
 
 ---
 
-##  📫Endpoints:
+## 📫Endpoints:
 
 - localhost:3001/customer;
-- localhost:3001/customer/customer.id;  
+- localhost:3001/customer/customer.id;
 
 ---
 
@@ -48,5 +48,6 @@
 <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="50" height="50"/> </a>
 <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="30" height="30"/> </a>
 <a href="https://www.sqlite.org/index.html" target="_blank" rel="sqlite"> <img src="https://i.blogs.es/ef26c3/81789893-2daf-418f-a041-8d37ee55b9a0/1366_2000.jpeg" alt="sqlite" width="80" height="30"/> </a>
+<a href="https://jestjs.io/es-ES/docs/api" target="_blank" rel="jest"> <img src="https://miro.medium.com/max/478/1*ZEpgDdBxq69A9XXy-SxRMg.png" alt="jest" width="80" height="30"/> </a>
 
 #### 👩‍💻made with ❤️ and 🪄 by Denise Troglio
